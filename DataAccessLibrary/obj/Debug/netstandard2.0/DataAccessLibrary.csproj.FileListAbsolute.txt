@@ -1,0 +1,5 @@
+C:\Users\lucas\source\repos\BikeShop\DataAccessLibrary\bin\Debug\netstandard2.0\DataAccessLibrary.deps.json
+C:\Users\lucas\source\repos\BikeShop\DataAccessLibrary\bin\Debug\netstandard2.0\DataAccessLibrary.dll
+C:\Users\lucas\source\repos\BikeShop\DataAccessLibrary\obj\Debug\netstandard2.0\DataAccessLibrary.csprojAssemblyReference.cache
+C:\Users\lucas\source\repos\BikeShop\DataAccessLibrary\obj\Debug\netstandard2.0\DataAccessLibrary.AssemblyInfoInputs.cache
+C:\Users\lucas\source\repos\BikeShop\DataAccessLibrary\obj\Debug\netstandard2.0\DataAccessLibrary.AssemblyInfo.cs
