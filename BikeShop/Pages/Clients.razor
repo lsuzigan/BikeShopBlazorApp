@@ -1,11 +1,52 @@
-﻿@page "/clients"
+﻿@page "/client"
 
 @using DataAccessLibrary
+@using BikeShop.Models
+@using Microsoft.Extensions.Configuration
+@using System.Linq
 
 @inject IDataAccess _db
+@inject IConfiguration _config
 
 <h3>Clients</h3>
 
-@code {
+@if(allClients == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Cpf</th>
+                    <th>Phone Number</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach(var client in allClients)
+                {
+                    <tr>
+                        <th>@client.Id</th>
+                        <th>@client.Name</th>
+                        <th>@client.Cpf</th>
+                        <th>@client.PhoneNumber</th>
+                        <th>@client.Email</th>
+                    </tr>
+                }
+            </tbody>
+        </table>
+}
 
+@code { 
+    List<Client> allClients;
+
+    protected override async Task OnInitializedAsync()
+    {
+        string sql = "select * from client;";
+        allClients = await _db.LoadData<Client, dynamic>(sql, new { }, _config.GetConnectionString("default"));
+    }
 }
