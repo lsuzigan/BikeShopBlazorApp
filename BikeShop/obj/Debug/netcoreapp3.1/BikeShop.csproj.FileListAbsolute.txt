@@ -33,7 +33,6 @@ C:\my-codes\BikeShop\BikeShop\obj\Debug\netcoreapp3.1\BikeShop.csproj.CoreCompil
 C:\my-codes\BikeShop\BikeShop\obj\Debug\netcoreapp3.1\BikeShop.MvcApplicationPartsAssemblyInfo.cache
 C:\my-codes\BikeShop\BikeShop\obj\Debug\netcoreapp3.1\BikeShop.RazorComponent.input.cache
 C:\my-codes\BikeShop\BikeShop\obj\Debug\netcoreapp3.1\RazorDeclaration\App.razor.g.cs
-C:\my-codes\BikeShop\BikeShop\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\Clients.razor.g.cs
 C:\my-codes\BikeShop\BikeShop\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\Counter.razor.g.cs
 C:\my-codes\BikeShop\BikeShop\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\FetchData.razor.g.cs
 C:\my-codes\BikeShop\BikeShop\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\Index.razor.g.cs
@@ -46,7 +45,6 @@ C:\my-codes\BikeShop\BikeShop\obj\Debug\netcoreapp3.1\BikeShop.TagHelpers.input.
 C:\my-codes\BikeShop\BikeShop\obj\Debug\netcoreapp3.1\BikeShop.TagHelpers.output.cache
 C:\my-codes\BikeShop\BikeShop\obj\Debug\netcoreapp3.1\BikeShop.RazorCoreGenerate.cache
 C:\my-codes\BikeShop\BikeShop\obj\Debug\netcoreapp3.1\Razor\App.razor.g.cs
-C:\my-codes\BikeShop\BikeShop\obj\Debug\netcoreapp3.1\Razor\Pages\Clients.razor.g.cs
 C:\my-codes\BikeShop\BikeShop\obj\Debug\netcoreapp3.1\Razor\Pages\Counter.razor.g.cs
 C:\my-codes\BikeShop\BikeShop\obj\Debug\netcoreapp3.1\Razor\Pages\FetchData.razor.g.cs
 C:\my-codes\BikeShop\BikeShop\obj\Debug\netcoreapp3.1\Razor\Pages\Index.razor.g.cs
@@ -67,3 +65,7 @@ C:\my-codes\BikeShop\BikeShop\obj\Debug\netcoreapp3.1\staticwebassets\BikeShop.S
 C:\my-codes\BikeShop\BikeShop\obj\Debug\netcoreapp3.1\BikeShop.dll
 C:\my-codes\BikeShop\BikeShop\obj\Debug\netcoreapp3.1\BikeShop.pdb
 C:\my-codes\BikeShop\BikeShop\obj\Debug\netcoreapp3.1\BikeShop.genruntimeconfig.cache
+C:\my-codes\BikeShop\BikeShop\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\Clients\Clients.razor.g.cs
+C:\my-codes\BikeShop\BikeShop\obj\Debug\netcoreapp3.1\Razor\Pages\Clients\Clients.razor.g.cs
+C:\my-codes\BikeShop\BikeShop\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\Clients\CreateClient.razor.g.cs
+C:\my-codes\BikeShop\BikeShop\obj\Debug\netcoreapp3.1\Razor\Pages\Clients\CreateClient.razor.g.cs

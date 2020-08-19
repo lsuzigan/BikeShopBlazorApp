@@ -1,0 +1,59 @@
+﻿@page "/clients"
+
+@using DataAccessLibrary
+@using BikeShop.Models
+@using Microsoft.Extensions.Configuration
+
+@inject IDataAccess _db
+@inject IConfiguration _config
+
+<h3>Clients</h3>
+
+<div id="new-client">
+    <a href="/clients/create" class="btn btn-primary">New</a>
+</div>
+
+@if (allClients == null)
+{
+    <p><em>Loading...</em></p>
+}
+else if (allClients.Count() == 0)
+{
+    <p>There are no clients registered</p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Document</th>
+                <th>Phone Number</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var client in allClients)
+            {
+                <tr>
+                    <th>@client.Id</th>
+                    <th>@client.Name</th>
+                    <th>@client.Document</th>
+                    <th>@client.PhoneNumber</th>
+                    <th>@client.Email</th>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    List<Client> allClients;
+
+    protected override async Task OnInitializedAsync()
+    {
+        string sql = "select * from client;";
+        allClients = await _db.LoadData<Client, dynamic>(sql, new { }, _config.GetConnectionString("default"));
+    }
+}

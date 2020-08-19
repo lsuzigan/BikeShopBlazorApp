@@ -1,0 +1,35 @@
+﻿@page "/clients/create"
+
+@using DataAccessLibrary
+@using BikeShop.Models
+@using Microsoft.Extensions.Configuration
+
+<h3>New Client</h3>
+
+<p>Enter data to create a new Client</p>
+
+<EditForm Model="@client">
+    <div class="form-group">
+        <label>Name</label>
+        <InputText @bind-Value="@client.Name"></InputText>
+    </div>
+    <div class="form-group">
+        <label>Document <small>(only numbers)</small></label>
+        <InputText @bind-Value="@client.Document"></InputText>
+    </div>
+    <div class="form-group">
+        <label>Phone Number <small>(only numbers)</small></label>
+        <InputText @bind-Value="@client.PhoneNumber"></InputText>
+    </div>
+    <div class="form-group">
+        <label>Email <small>(only numbers)</small></label>
+        <InputText @bind-Value="@client.Email"></InputText>
+    </div>
+    <button type="submit" class="btn btn-success">Save</button>
+</EditForm>
+
+@code {
+    Client client = new Client { };
+
+    
+}
