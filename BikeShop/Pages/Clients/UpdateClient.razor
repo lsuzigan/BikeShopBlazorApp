@@ -1,0 +1,71 @@
+﻿@page "/clients/edit"
+
+@using Microsoft.AspNetCore.WebUtilities
+@using Microsoft.Extensions.Configuration
+@using BikeShop.Models
+@using DataAccessLibrary
+@using System.Linq
+
+@inject NavigationManager _nav
+@inject IDataAccess _db
+@inject IConfiguration _config
+
+<h3>Update Client</h3>
+
+<p>Enter data to update Client</p>
+
+<EditForm Model="@editClient" OnValidSubmit="EditClient">
+
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <div class="form-group">
+        <label>Name</label>
+        <InputText @bind-Value="@editClient.Name"></InputText>
+    </div>
+    <div class="form-group">
+        <label>Document <small>(only numbers)</small></label>
+        <InputText @bind-Value="@editClient.Document"></InputText>
+    </div>
+    <div class="form-group">
+        <label>Phone Number <small>(only numbers)</small></label>
+        <InputText @bind-Value="@editClient.PhoneNumber"></InputText>
+    </div>
+    <div class="form-group">
+        <label>Email <small>(only numbers)</small></label>
+        <InputText @bind-Value="@editClient.Email"></InputText>
+    </div>
+    <button type="submit" class="btn btn-success">Save</button>
+</EditForm>
+
+@code {
+    System.Uri _uri;
+    private static int clientId;
+
+    protected override void OnInitialized()
+    {
+        _uri = _nav.ToAbsoluteUri(_nav.Uri);
+
+        if (QueryHelpers.ParseQuery(_uri.Query).TryGetValue("id", out var idValue))
+        {
+            clientId = int.Parse(idValue);
+        }
+    }
+
+    List<Client> allClients;
+    Client editClient;
+
+    protected override async Task OnInitializedAsync()
+    {
+        string sql = "select * from client;";
+        allClients = await _db.LoadData<Client, dynamic>(sql, new { }, _config.GetConnectionString("default"));
+        editClient = allClients.Where(client => client.Id == clientId).FirstOrDefault();
+    }
+
+    private async Task EditClient()
+    {
+        string sql = @"update `bikeshop`.`client` set `name`=@Name, `document`=@Document, `phone_number`=@PhoneNumber, `email`=@Email
+                        where `id`=@Id;";
+        await _db.SaveData(sql, editClient, _config.GetConnectionString("default"));
+    }
+}

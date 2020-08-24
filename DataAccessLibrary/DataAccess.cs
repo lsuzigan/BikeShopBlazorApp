@@ -21,6 +21,16 @@ namespace DataAccessLibrary
             }
         }
 
+        public async Task<T> LoadOneRow<T, U>(string sql, U parameters, string connectionString)
+        {
+            using (IDbConnection connection = new MySqlConnection(connectionString))
+            {
+                var row = await connection.QueryAsync<T>(sql, parameters);
+
+                return (T) row;
+            }
+        }
+
         public Task SaveData<T>(string sql, T parameters, string connectionString)
         {
             using (IDbConnection connection = new MySqlConnection(connectionString))

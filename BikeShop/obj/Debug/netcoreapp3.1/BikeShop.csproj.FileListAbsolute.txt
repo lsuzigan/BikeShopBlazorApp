@@ -69,3 +69,5 @@ C:\my-codes\BikeShop\BikeShop\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\Cli
 C:\my-codes\BikeShop\BikeShop\obj\Debug\netcoreapp3.1\Razor\Pages\Clients\Clients.razor.g.cs
 C:\my-codes\BikeShop\BikeShop\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\Clients\CreateClient.razor.g.cs
 C:\my-codes\BikeShop\BikeShop\obj\Debug\netcoreapp3.1\Razor\Pages\Clients\CreateClient.razor.g.cs
+C:\my-codes\BikeShop\BikeShop\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\Clients\UpdateClient.razor.g.cs
+C:\my-codes\BikeShop\BikeShop\obj\Debug\netcoreapp3.1\Razor\Pages\Clients\UpdateClient.razor.g.cs

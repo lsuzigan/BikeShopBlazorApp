@@ -26,6 +26,7 @@ else
     <table class="table">
         <thead>
             <tr>
+                <th></th>
                 <th>Id</th>
                 <th>Name</th>
                 <th>Document</th>
@@ -37,12 +38,16 @@ else
             @foreach (var client in allClients)
             {
                 <tr>
+                    <th>
+                        <a href="/clients/edit?id=@client.Id" class="btn btn-dark">Edit</a>
+                    </th>
                     <th>@client.Id</th>
                     <th>@client.Name</th>
                     <th>@client.Document</th>
                     <th>@client.PhoneNumber</th>
                     <th>@client.Email</th>
                 </tr>
+
             }
         </tbody>
     </table>

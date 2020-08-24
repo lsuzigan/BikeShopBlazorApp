@@ -11,7 +11,11 @@
 
 <p>Enter data to create a new Client</p>
 
-<EditForm Model="@client">
+<EditForm Model="@client" OnValidSubmit="InsertClient">
+
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
     <div class="form-group">
         <label>Name</label>
         <InputText @bind-Value="@client.Name"></InputText>
@@ -28,7 +32,7 @@
         <label>Email <small>(only numbers)</small></label>
         <InputText @bind-Value="@client.Email"></InputText>
     </div>
-    <button type="submit" class="btn btn-success" @onclick="InsertClient">Save</button>
+    <button type="submit" class="btn btn-success">Save</button>
 </EditForm>
 
 @code {
