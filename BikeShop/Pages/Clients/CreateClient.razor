@@ -4,6 +4,9 @@
 @using BikeShop.Models
 @using Microsoft.Extensions.Configuration
 
+@inject IDataAccess _db
+@inject IConfiguration _config
+
 <h3>New Client</h3>
 
 <p>Enter data to create a new Client</p>
@@ -25,11 +28,16 @@
         <label>Email <small>(only numbers)</small></label>
         <InputText @bind-Value="@client.Email"></InputText>
     </div>
-    <button type="submit" class="btn btn-success">Save</button>
+    <button type="submit" class="btn btn-success" @onclick="InsertClient">Save</button>
 </EditForm>
 
 @code {
     Client client = new Client { };
 
-    
+    private async Task InsertClient()
+    {
+        string sql = @"insert into `bikeshop`.`client` (`name`, `document`, `phone_number`, `email`)
+                        values (@Name, @Document, @PhoneNumber, @Email);";
+        await _db.SaveData(sql, client, _config.GetConnectionString("default"));
+    }
 }
