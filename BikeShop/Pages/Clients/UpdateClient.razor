@@ -64,7 +64,7 @@
 
     private async Task EditClient()
     {
-        string sql = @"update `bikeshop`.`client` set `name`=@Name, `document`=@Document, `phone_number`=@PhoneNumber, `email`=@Email
+        string sql = @"update `bikeshop`.`client` set `name`=@Name, `document`=@Document, `phoneNumber`=@PhoneNumber, `email`=@Email
                         where `id`=@Id;";
         await _db.SaveData(sql, editClient, _config.GetConnectionString("default"));
     }

@@ -40,7 +40,7 @@
 
     private async Task InsertClient()
     {
-        string sql = @"insert into `bikeshop`.`client` (`name`, `document`, `phone_number`, `email`)
+        string sql = @"insert into `bikeshop`.`client` (`name`, `document`, `phoneNumber`, `email`)
                         values (@Name, @Document, @PhoneNumber, @Email);";
         await _db.SaveData(sql, client, _config.GetConnectionString("default"));
     }
